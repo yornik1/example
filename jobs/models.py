@@ -6,6 +6,8 @@ class Job(models.Model):
     description = models.CharField(max_length=128, null=True, blank=True)
 
 
+
+
 class FilteredJobsWrapper(models.Model):
     def __init__(self, code_digit_sum):
         return None
