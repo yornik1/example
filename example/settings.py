@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = (
     'persons.apps.PersonsConfig',
-    'jobs'  # my job app
+    'jobs',  # my job app
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
