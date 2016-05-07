@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 import os
 import django
-from jobs.models import Job
+from sys import path as sys_path  ###
 import json
 import urllib.request
+sys_path.append('..')                   ###
 URL_WITH_JSON = 'http://standards.openprocurement.org/classifiers/dk003/uk.json'
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "example.settings")
 django.setup()
+from jobs.models import Job
 
 
 if __name__ == '__main__':

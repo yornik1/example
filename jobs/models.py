@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Job(models.Model):
-    code_job = models.IntegerField
+    code_job = models.PositiveSmallIntegerField()
     description = models.CharField(max_length=128, null=True, blank=True)
 
 
