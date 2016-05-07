@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Persons ({{ persons_count }})</title>
+    </head>
+    <body>
+        <h1><a href="/manage">Manage persons</a></h1>
+        <h1>Persons ({{ persons_count }}):</h1>
+        {% if tiny_font %}<h5>{% else %}<h2>{% endif %} {# (!) template tag #}
+        <ol>
+        {% for p in persons %}
+            <li>{{ p | escape }} {# (!) filter #}</li>
+        {% endfor %}
+        </ol>
+        {% if tiny_font %}</h5>{% else %}</h2>{% endif %}
+    </body>
+</html>

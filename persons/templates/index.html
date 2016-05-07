@@ -1,0 +1,18 @@
+<html>
+    <head>
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+        <script type="text/javascript" src="{% static 'snowstorm.js' %}" ></script>
+        <title>Weclome to our nice site!</title>
+    </head>
+    <body>
+        {% if user.is_authenticated %}
+            <h3>Persons says... hello {{ user.username }}!</h3>
+        {% else %}
+            <h3>Persons says... hello world!</h3>
+        {% endif %}<br />
+        <h1><a href="/persons">List persons</a></h1>
+        <h1><a href="/manage">Manage persons</a></h1>
+        <img src="{% static 'people.gif' %}" />
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Manage (add & remove) Persons</title>
+        <style type="text/css">
+            form, input {
+                padding: 3px;
+                margin: 3px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1><a href="/persons">List persons</a></h1>
+        <h1>Manage Persons ({{ persons_count }}):</h1>
+        <h2>Add person</h2>
+        <form action="/manage/" method="post" style="padding: 5px;">
+            {% csrf_token %}
+            {{ form_add.as_ul }}
+            <p />
+            <input type="submit" value="Submit" />
+            <input type="reset" value="Clear" />
+        </form>
+        <h2>Remove person</h2>
+        <form action="/manage/" method="post" style="padding: 5px;">
+            {% csrf_token %}
+            {{ form_rem.as_ul }}
+            <p />
+            <input type="submit" value="Submit" />
+            <input type="reset" value="Clear" />
+        </form>
+    </body>
+</html>
