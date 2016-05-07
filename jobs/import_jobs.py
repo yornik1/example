@@ -18,6 +18,7 @@ if __name__ == '__main__':
         code = key
         descr = dict_from_json.get(key)
         job = Job(code_job=code, description=descr)
+        job.save()
         imported_jobs_count += 1
         print(code, descr)
     print('Imported %s jobs.' % imported_jobs_count)

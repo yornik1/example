@@ -7,7 +7,6 @@ class Job(models.Model):
 
 
 
-
 class FilteredJobsWrapper(models.Model):
     def __init__(self, code_digit_sum):
         return None
