@@ -124,14 +124,22 @@ def list_persons(request):
     GET_SHORT_NAME = 'short'
     GET_FULL_NAME = 'full'
     GET_EMAIL = 'mail'
+    GET_CODE_JOB = 'code'
+    GET_DESCRIPTION = 'description'
 
-    get_params = { GET_SHORT_NAME : request.GET.get(GET_SHORT_NAME),
-                    GET_FULL_NAME : request.GET.get(GET_FULL_NAME),
-                    GET_EMAIL : request.GET.get(GET_EMAIL) }
+    get_params = {GET_SHORT_NAME: request.GET.get(GET_SHORT_NAME),
+                  GET_FULL_NAME: request.GET.get(GET_FULL_NAME),
+                  GET_EMAIL: request.GET.get(GET_EMAIL),
+                  GET_CODE_JOB: request.GET.get(GET_CODE_JOB),
+                  GET_DESCRIPTION: request.GET.get(GET_DESCRIPTION)
+                  }
 
-    filter_strings = { GET_SHORT_NAME : 'short_name__icontains',
-                        GET_FULL_NAME : 'full_name__icontains',
-                        GET_EMAIL : 'email__icontains' }
+    filter_strings = {GET_SHORT_NAME: 'short_name__icontains',
+                      GET_FULL_NAME: 'full_name__icontains',
+                      GET_EMAIL: 'email__icontains',
+                      GET_CODE_JOB: 'code_job__icontains',
+                      GET_DESCRIPTION: 'description__icontains'
+                      }
 
     persons = Person.objects.all()
 

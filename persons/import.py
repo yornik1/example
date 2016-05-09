@@ -11,6 +11,8 @@ django.setup()
 
 # actual import script:
 from persons.models import Person
+from jobs.models import Job
+from random import choice
 
 if __name__ == '__main__':
     if len(argv) != 2:
@@ -21,7 +23,11 @@ if __name__ == '__main__':
             for line in input_file:
                 short, full, mail = line.split('\t')
                 person = Person(short_name=short, full_name=full, email=mail)
-                person.save() # write new row to DB
-                imported_persons_count += 1
+                #person.job = choice(Job.objects.all())
+                person.update_jobs()
+                print(person)
+                #print(person.job.description)
+                person.save()  # write new row to DB
 
+                imported_persons_count += 1
         print('Imported %s persons.' % imported_persons_count)

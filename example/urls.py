@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^', include('persons.urls')),
+#    url(r'^jobs$', include('jobs.urls')),
 ]

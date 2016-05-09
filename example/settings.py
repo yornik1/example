@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = (
     'persons.apps.PersonsConfig',
-    'jobs',  # my job app
+    'jobs.apps.JobsConfig',  # my job app
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,6 +56,7 @@ TEMPLATE_LOADERS = (
 
 STATICFILES_DIRS = (
     ('persons', '/home/fifajan/gh/django-stuff/example/persons/static'),
+    ('jobs', '/home/fifajan/gh/django-stuff/example/persons/static'),
 )
 
 TEMPLATE_DIR = [os.path.join(BASE_DIR, 'templates')]
